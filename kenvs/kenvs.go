@@ -65,6 +65,10 @@ func (k *Kenvs) Run() error {
 		if err != nil {
 			return err
 		}
+	} else {
+		k.data.ApiVersion = "v1"
+		k.data.Kind = "Secret"
+		k.data.Type = "Opaque"
 	}
 	return k.UpdateSecret()
 }
